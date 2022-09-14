@@ -7,8 +7,21 @@
       $age = 40;
       $name = 'Richard';
       $continent = 'Europe';
-      echo "Good Morning, $name, in $continent."
-    ?>
+      echo "Good Morning, $name, in $continent";
+      echo 'Good Morning, ' . $name . 'in ' . $continent;
+      echo "\nThis is line 1\n";
+      echo "This is line 2\n";
+      echo "\t this is line three, tabbed";
+      echo "The quick brown fox
+            jumped over the fence to 
+            get to the lazy dog.";
+echo "This string spans
+multiple lines. The newlines will be
+output as well";
+echo "This string spans\nmultiple lines. The newlines will be\noutput as well.";
+
+
+  ?>
     <?php echo '<h1>Hello World</h1>'?>
     <?php echo '<h2>Good Morning</h2>'?>
     <?php echo '<p>Hello World</p>'; ?> 
