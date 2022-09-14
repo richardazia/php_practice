@@ -7,6 +7,7 @@
       $age = 40;
       $name = 'Richard';
       $continent = 'Europe';
+      echo "Good Morning, $name, in $continent."
     ?>
     <?php echo '<h1>Hello World</h1>'?>
     <?php echo '<h2>Good Morning</h2>'?>
