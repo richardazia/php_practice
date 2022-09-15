@@ -4,6 +4,7 @@
   </head>
   <body>
     <?php 
+
       $age = 40;
       $name = 'Richard';
       $continent = 'Europe';
@@ -59,8 +60,52 @@ $effort = "grandiose"; // Italics
 $mishap = "skidded"; // bold
 $result = "efficient";
 
-echo "<h1>$name</h1> was out $sport by a <i>$effort</i> landscape when he <b>$mishap</b> before coming to an $result stop."
+echo "<h1>$name</h1><p>$name was out $sport by the <i>$effort</i> Jurassic landscape when he <b>$mishap</b> before coming to an $result stop. <p> The bike ride would continue for a while.";
 
+$a = 9 > 5;
+$b = 10 != 10;
+$c = $a || $b;
+$d = $a && $b;
+$e = $b && $c;
+$f = $a || $d;
+
+$logic = array($a, $b, $c, $d, $e, $f,);
+
+echo '<pre>';
+  print_r( $logic );
+echo '</pre>';
+echo '<pre>';
+  var_dump( $logic );
+echo '</pre>';
+
+if ( 10 < 1) {
+  echo '<p>We stopped at if<p>';
+} else if ( 10 < 4 ) {
+  echo '<p>We stopped at else if</p>';
+} else if (10 < 11) {
+  echo '<p>We stopped at the second else if</p>';
+} else if (10 < 20 ) {
+  echo '<p>We stopped at the third else if</p>';
+} else {
+  echo '<p>None of the conditions were met so we completed the loop by echoing the else statement. </p>';
+}
+
+$logged_in = false;
+
+$message = $logged_in ? "Welcome back $name" : "Howdy stranger";
+
+// Option 2 - concatenation
+$message2 = "<p>Welcome " . ($logged_in ? " once again" : "new friend");
+
+echo $message;
+
+echo $message2;
+
+// We can output the result directly, without going through a variable. 
+
+$user_name = "<p>Richard</p>";
+
+echo isset( $user_name ) ? $user_name : '<p>Duck';
 
   ?>
     <!--
