@@ -4,7 +4,7 @@
   </head>
   <body>
     <?php 
-
+/*
       $age = 40;
       $name = 'Richard';
       $continent = 'Europe';
@@ -106,7 +106,37 @@ echo $message2;
 $user_name = "<p>Richard</p>";
 
 echo isset( $user_name ) ? $user_name : '<p>Duck';
+*/
 
+$trucks_given = 5;
+
+switch ( $trucks_given) {
+  case 1:
+    echo "Trucks provided: " . $trucks_given;
+    break;
+  case 2:
+    echo "Trucks provided: " . $trucks_given;
+    break;
+  case 3:
+  echo "Trucks provided: " . $trucks_given;
+  break;
+  default:
+    echo '<p> The number of trucks that were given is more than 3';
+}
+
+// Bunching Switches together
+
+$items_in_collection = 2;
+switch( $items_in_collection ) {
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+    echo "<p>There are less than five items in the collection";
+    break;
+  default:
+    echo "<p>There are five or more items in the collection";
+    }
   ?>
     <!--
     This script places a badge on your repl's full-browser view back to your repl's cover
