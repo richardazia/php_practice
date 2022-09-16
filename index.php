@@ -107,7 +107,7 @@ $user_name = "<p>Richard</p>";
 
 echo isset( $user_name ) ? $user_name : '<p>Duck';
 */
-
+/*
 $trucks_given = 5;
 
 switch ( $trucks_given) {
@@ -126,7 +126,7 @@ switch ( $trucks_given) {
 
 // Bunching Switches together
 
-$items_in_collection = 2;
+$items_in_collection = 7;
 switch( $items_in_collection ) {
   case 1:
   case 2:
@@ -138,6 +138,29 @@ switch( $items_in_collection ) {
     echo "<p>There are five or more items in the collection";
     }
   ?>
+      */
+
+// Number guessing challenge
+
+$to_guess = rand(1,10);
+print_r($to_guess);
+
+$guess = (int)readline('Enter a number between 1 and 10: ');
+
+if ($guess != (int)$to_guess) {
+  $guess = (int)readline('Enter a number between 1 and 10: ');
+  if ($guess < $to_guess) {
+    echo'<p>Too low';
+  } else if ($guess > $to_guess and $guess < 11) {
+    echo'<p>Too high';
+  } else if ($guess <= 0 or $guess >=11) {
+    echo '<p>The number is out of range';
+  }
+} else {
+  echo'<p> Great guess, you are right!';
+}
+
+?>
     <!--
     This script places a badge on your repl's full-browser view back to your repl's cover
     page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
