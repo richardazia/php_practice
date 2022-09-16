@@ -1,8 +1,9 @@
 <html>
   <head>
-    <title>PHP Test</title>
+    <title>PHP Test - Learning PHP code along</title>
   </head>
   <body>
+    <p>Code along with Joe Casabona - </p>
     <?php 
 /*
       $age = 40;
@@ -139,7 +140,7 @@ switch( $items_in_collection ) {
     }
   ?>
       */
-
+/*
 // Number guessing challenge
 
 $to_guess = rand(1,10);
@@ -148,6 +149,7 @@ print_r($to_guess);
 $guess = (int)readline('Enter a number between 1 and 10: ');
 
 if ($guess != (int)$to_guess) {
+  echo '<p>That guess was incorrect, please try again.';
   $guess = (int)readline('Enter a number between 1 and 10: ');
   if ($guess < $to_guess) {
     echo'<p>Too low';
@@ -159,6 +161,21 @@ if ($guess != (int)$to_guess) {
 } else {
   echo'<p> Great guess, you are right!';
 }
+*/
+
+$a = (14+82-32/2)**2;
+$b = 18 * (3 / 6 -9) * 10;
+$c = 5*(12/2 -8 * 4 + 12 * 6);
+
+echo "<p>Display value of a: $a</p>";
+echo "<p>Display value of b: $b</p>";
+echo "<p>Display value of c: $c</p>";
+
+$calculation_results[] = $a;
+$calculation_results[] = $b;
+$calculation_results[] = $c;
+
+print_r($calculation_results)
 
 ?>
     <!--
