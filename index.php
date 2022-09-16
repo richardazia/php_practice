@@ -162,7 +162,7 @@ if ($guess != (int)$to_guess) {
   echo'<p> Great guess, you are right!';
 }
 */
-
+/*
 $a = (14+82-32/2)**2;
 $b = 18 * (3 / 6 -9) * 10;
 $c = 5*(12/2 -8 * 4 + 12 * 6);
@@ -175,7 +175,24 @@ $calculation_results[] = $a;
 $calculation_results[] = $b;
 $calculation_results[] = $c;
 
-print_r($calculation_results)
+print_r($calculation_results);
+*/
+// Got the same result as the course but with a different code layout. 
+// Course code below
+
+$result = array();
+
+$results[] = (14 + 82 - (32 / 2) ) ** 2;
+$results[] = 18 * ( (3 / 6 ) -9) * 10;
+$results[] = 5* ( (12 / 2) - (8 * 4) + (12 * 6));
+
+echo '<pre>';
+print_r( $results );
+echo '</pre>';
+
+echo (15 % 12)**2;
+
+echo 3**2+5*2;
 
 ?>
     <!--
