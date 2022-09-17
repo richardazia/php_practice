@@ -179,7 +179,7 @@ print_r($calculation_results);
 */
 // Got the same result as the course but with a different code layout. 
 // Course code below
-
+/*
 $result = array();
 
 $results[] = (14 + 82 - (32 / 2) ) ** 2;
@@ -193,6 +193,61 @@ echo '</pre>';
 echo (15 % 12)**2;
 
 echo 3**2+5*2;
+*/
+
+// PHP Loop
+$i = 0;
+/*
+do {
+  echo "<p>$i iterations</p>";
+    $i++;
+} while ( $i < 10 );
+*/
+// Slightly different
+/*
+while ( $i < 10)  {
+       echo "<p>$i</p>";
+       $i++;
+}
+echo "<p>The For Loop</p>";
+for ( $i = 0; $i < 10; $i++) {
+  echo "<p>$i</p>";
+}
+echo "<h3>Display the Colours of the Rainbow</h3>";
+*/
+
+$colours = array('red', 'orange', 'green', 'blue', 'indigo', 'violet');
+
+$colors = array('red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet');
+/*
+$c = 0;
+for( $c = 0; $c < sizeof($colours); $c++) {
+  echo "<p> $colours[$c]</p>";
+}
+*/
+// The same but with a foreach loop
+foreach( $colors as $color ) {
+  echo "<p>$color</p>";
+}
+echo "<p>Colour</p>";
+foreach( $colours as $colour ) {
+  echo "<p>$colour</p>";
+}
+
+$week_day = array(
+  'Monday' => 'sunny',
+  'Tuesday' => 'rainy',
+  'Wednesday' => 'tropical heat',
+  'Thursday' => 'foggy',
+  'Friday' => 'windy and rainy',
+  'Saturday' => 'changeable weather',
+  'Sunday' => 'snowing',
+);
+// Foreach loop with an associative array. 
+
+foreach ( $week_day as $day => $weather ) {
+  echo "<p>$day is going to be $weather</p>";
+}
 
 ?>
     <!--
