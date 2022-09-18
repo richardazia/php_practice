@@ -288,6 +288,30 @@ $sequence = substr( $sequence, 0, strlen( $sequence)-1); // to remove trailing c
 echo "<pre>";
 echo $sequence;
 echo "</pre>";
+
+// Quick example of using the date
+// no need to import plugins with php
+echo date( 'd F, Y');
+
+// The Palindrom Function
+
+function is_palindrome( $string ) {
+//  $string = strtolower( $string );
+//  $string = str_replace( ' ', '', $string);
+  $string = str_replace( ' ', '', strtolower( $string )); 
+  
+//  $pal_check = ( $string == strrev( $string ) );
+  return ( $string == strrev( $string ) );
+}
+
+$check_string = 'Wow';
+
+if ( is_palindrome( $check_string ) ) {
+    echo "<p>$check_string is a palindrome</p>";
+}
+
+
+
 ?>
     <!--
     This script places a badge on your repl's full-browser view back to your repl's cover
