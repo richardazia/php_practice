@@ -196,7 +196,8 @@ echo 3**2+5*2;
 */
 
 // PHP Loop
-$i = 0;
+
+// $i = 0;
 /*
 do {
   echo "<p>$i iterations</p>";
@@ -226,6 +227,7 @@ for( $c = 0; $c < sizeof($colours); $c++) {
 }
 */
 // The same but with a foreach loop
+/*
 foreach( $colors as $color ) {
   echo "<p>$color</p>";
 }
@@ -248,7 +250,22 @@ $week_day = array(
 foreach ( $week_day as $day => $weather ) {
   echo "<p>$day is going to be $weather</p>";
 }
+*/
 
+// Fibonacci Sequence
+
+// From 1 to 200
+// modelled from https://www.plus2net.com/php_tutorial/fibonacci-series.php
+
+$n1 = 1;
+$n2 = 0;
+
+for ( $i = 0; $i <= 12; $i++) {
+     echo "<p>$n2</p>";
+  $temp = $n1 + $n2;
+  $n1 = $n2;
+  $n2 = $temp;
+}
 ?>
     <!--
     This script places a badge on your repl's full-browser view back to your repl's cover
