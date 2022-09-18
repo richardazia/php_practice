@@ -256,7 +256,7 @@ foreach ( $week_day as $day => $weather ) {
 
 // From 1 to 200
 // modelled from https://www.plus2net.com/php_tutorial/fibonacci-series.php
-
+/*
 $n1 = 1;
 $n2 = 0;
 
@@ -266,6 +266,28 @@ for ( $i = 0; $i <= 12; $i++) {
   $n1 = $n2;
   $n2 = $temp;
 }
+*/
+
+// Course solution, using while loop
+$current = 1;
+$previous = 0;
+$next = null;
+$limit = 200;
+$sequence = '';
+
+while ($current < $limit ) {
+//  echo $current . ", ";
+  $sequence .= $current . ', ';
+  $next = $current + $previous;
+  $previous = $current;
+  $current = $next;
+}
+
+$sequence = trim( $sequence ); // remove white spaces
+$sequence = substr( $sequence, 0, strlen( $sequence)-1); // to remove trailing comma. 
+echo "<pre>";
+echo $sequence;
+echo "</pre>";
 ?>
     <!--
     This script places a badge on your repl's full-browser view back to your repl's cover
