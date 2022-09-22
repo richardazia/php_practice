@@ -4,6 +4,7 @@
   </head>
   <body>
     <p>Code along with Joe Casabona - </p>
+    <p>php -S localhost:8000</<p>
     <?php 
 /*
       $age = 40;
@@ -267,7 +268,7 @@ for ( $i = 0; $i <= 12; $i++) {
   $n2 = $temp;
 }
 */
-
+/*
 // Course solution, using while loop
 $current = 1;
 $previous = 0;
@@ -309,15 +310,11 @@ $check_string = 'Wow';
 if ( is_palindrome( $check_string ) ) {
     echo "<p>$check_string is a palindrome</p>";
 }
+*/
 
 
 
 ?>
-    <!--
-    This script places a badge on your repl's full-browser view back to your repl's cover
-    page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-    teal, blue, blurple, magenta, pink!
-    -->
-    <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
+
   </body>
 </html>
