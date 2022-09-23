@@ -312,9 +312,72 @@ if ( is_palindrome( $check_string ) ) {
 }
 */
 
+// Anonymous Functions
 
+$villages = array( 'Duiller', 'Coppet', 'Borex', 'Genolier', 'Bursins'); 
+
+usort( $villages, function($a, $b) {
+  return $a[1] <=> $b[1];
+});
+
+// Objects
+
+class Person {
+  // This code is no longer required for object creation
+  // var $name;
+  // var $age;
+  // var $birthday = false;
+
+  // The constructor
+  function __construct( $name, $age) {
+    $this->name = $name;
+    $this->age = $age;
+  }
+
+  public function get_name() {
+    return $this->name;
+  }
+
+  public function get_age() {
+    return $this->age;
+  }
+
+  public function set_name ( $new_name) {
+    $this->name = $new_name;
+  }
+
+  public function set_birthday( $b ) {
+    $this->birthday = $b;
+    $this->update_age();
+  }
+
+  private function update_age() {
+    $this->age = ($this->birthday) ? ++$this->age : $this->age;
+  }
+}
+
+$brita = new Person( 'Brita', 62 );
+$laptop = new Person( 'laptop', 7);
+echo "<br>---- Output ----</br>";
+echo $brita->get_name() . '</br>';
+echo $brita->get_age() . '</br>';
+echo $laptop->get_name() . '</br>';
+echo $laptop->get_age() . '</br>';
+
+// Returns an error as the function is private.
+// $brita->set_birthday(true);
+// $brita->update_age();
+// $brita->get_age();
+
+echo "Brita's updated age: ";
+$brita->set_birthday(true);
+echo $brita->get_age();
 
 ?>
+
+<pre>
+  <?php print_r( $villages ); ?>
+</pre>
 
   </body>
 </html>
