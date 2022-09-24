@@ -1,8 +1,11 @@
+<?php require 'variables.php'; ?>
 <html>
   <head>
-    <title>PHP Test - Learning PHP code along</title>
+    <title><?php echo $title;?> </title>
   </head>
   <body>
+    <h1><?php echo $title;?></h1>
+    <p><?php echo $description; ?>
     <p>Code along with Joe Casabona - </p>
     <p>php -S localhost:8000</<p>
     <?php 
