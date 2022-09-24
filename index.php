@@ -8,7 +8,10 @@
     <p><?php echo $description; ?>
     <p>Code along with Joe Casabona - </p>
     <p>php -S localhost:8000</<p>
-    <?php 
+    
+    <?php
+    echo '<p><a href="about.php">about</a>';
+    echo '<p><a href="contact.php">Contact</a>';
 /*
       $age = 40;
       $name = 'Richard';
@@ -376,11 +379,14 @@ echo "Brita's updated age: ";
 $brita->set_birthday(true);
 echo $brita->get_age();
 
+echo '<p><a href="namespace.php">namespace</a>' 
+
 ?>
 
 <pre>
   <?php print_r( $villages ); ?>
 </pre>
+
 
   </body>
 </html>
