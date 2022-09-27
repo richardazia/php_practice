@@ -15,14 +15,15 @@
 			<h1><?php echo $title; ?></h1>
 			<nav>
 				<ul>
-					<li><a href="about.php">About Me</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="contact.php">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
 		<main>
             <?php echo $h2_welcome; ?>
-            <p>Hello world! This is my PHP website!</p>
+            <p>Hello world! This is my About Page!</p>
+            <p>Come back later for more content<p>
             <?php echo $default_content; ?>
         </main>
 	</div>
