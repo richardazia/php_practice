@@ -12,6 +12,8 @@
     <?php
     echo '<p><a href="about.php">about</a>';
     echo '<p><a href="contact.php">Contact</a>';
+    echo '<p><a href="throw.php">Throw</a>'; 
+    echo '<p><a href="sort.php">Sort</a>';
 /*
       $age = 40;
       $name = 'Richard';
