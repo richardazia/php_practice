@@ -329,7 +329,7 @@ usort( $villages, function($a, $b) {
 });
 
 // Objects
-
+/*
 class Person {
   // This code is no longer required for object creation
   // var $name;
@@ -372,6 +372,7 @@ echo $brita->get_age() . '</br>';
 echo $laptop->get_name() . '</br>';
 echo $laptop->get_age() . '</br>';
 
+
 // Returns an error as the function is private.
 // $brita->set_birthday(true);
 // $brita->update_age();
@@ -382,7 +383,48 @@ $brita->set_birthday(true);
 echo $brita->get_age();
 
 echo '<p><a href="namespace.php">namespace</a>' 
+*/
 
+// Course solution for sort
+
+class Person {
+  var $first_name;
+  var $last_name;
+
+  // The constructor
+  function __construct( $first_name, $last_name) {
+    $this->first_name = $first_name;
+    $this->last_name = $last_name;
+  }
+
+  public function get_first_name() {
+    return $this->first_name;
+  }
+
+  public function get_last_name() {
+    return $this->last_name;
+  }
+
+}
+
+$joe = new Person( 'Joe', 'Casabona' );
+$steve = new Person( 'Steve', 'Wozniak');
+$logic = new Person( 'Logic', 'Gates');
+$melinda = new Person( 'Melinda', 'Gates');
+$bill = new Person( 'Bill', 'Gates');
+$igor = new Person('Igor', 'Sikorsky');
+
+$people = array ($logic, $joe, $steve, $melinda, $bill, $igor);
+echo "<p>Challenge solution</p>";
+echo "<br>";
+usort( $people, function($a, $b) {
+  // Option 1: 
+  // return $a->get_last_name() <=> $b->get_last_name();
+  // Option 2: 
+  return [$a->get_last_name(), $a->get_first_name()] <=> [$b->get_last_name(), $b->get_first_name()];
+});
+
+print_r( $people ); 
 ?>
 
 <pre>
