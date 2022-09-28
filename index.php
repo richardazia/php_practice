@@ -14,6 +14,7 @@
     echo '<p><a href="contact.php">Contact</a>';
     echo '<p><a href="throw.php">Throw</a>'; 
     echo '<p><a href="sort.php">Sort</a>';
+    echo '<p><a href="learning_php_course_files/08_02_basic">Form</a>';
 /*
       $age = 40;
       $name = 'Richard';
