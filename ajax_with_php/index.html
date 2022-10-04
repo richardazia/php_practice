@@ -14,6 +14,21 @@
 
     <script>
       function replaceText() {
+        var target = document.getElementById("main");
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '../udhr.txt', true); 
+        // What do we want to do when the state changes? 
+        xhr.onreadystatechange = function () {
+          console.log('readyState ' + xhr.readyState);
+          if(xhr.readyState == 2) {
+            target.innerHTML = 'Loading...';
+          }
+          // Click this and the UDHR displays
+          if(xhr.readyState == 4 && xhr.status == 200) {
+            target.innerHTML = xhr.responseText;
+          }
+        }
+        xhr.send();
       }
 
       var button = document.getElementById ("ajax-button");
