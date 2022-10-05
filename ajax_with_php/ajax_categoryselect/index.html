@@ -25,7 +25,7 @@
         
         var cat_id = cat_select.options[cat_select.selectedIndex].value;
 
-        var url = 'subcategories.php?category_id=' + cat_id;
+        var url = 'ajax_categoryselect/subcategories.php?category_id=' + cat_id;
 
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
