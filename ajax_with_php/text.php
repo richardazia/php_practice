@@ -1,10 +1,11 @@
 <?php
 
-$var = 'content from another page';
-// For debugging we can add 
-echo $var;
-return;
+    $content = array(
+        'short' => 'The Happy Fox',
+        'medium' => 'The Happy Fox that has adventures with a lazy dog',
+        'long winded' => 'The very quick but very lazy brown fox jumped over the overexhuberant dog',
+    );
+
+    echo json_encode($content);
 
 ?>
-
-<span style="color: grey;">This is <i><?php echo $var ?></i> which loads into the current page via an AJAX request.

@@ -16,7 +16,7 @@
       function replaceText() {
         var target = document.getElementById("main");
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'text.php', true); 
+        xhr.open('GET', 'ajax_with_php/text.php', true); 
         // What do we want to do when the state changes? 
         xhr.onreadystatechange = function () {
           console.log('readyState ' + xhr.readyState);
@@ -25,7 +25,10 @@
           }
           // Click this and the UDHR displays
           if(xhr.readyState == 4 && xhr.status == 200) {
-            target.innerHTML = xhr.responseText;
+            var json = JSON.parse(xhr.responseText);
+
+            target.innerHTML = json.short;
+            // target.innerHTML = xhr.responseText;
           }
         }
         xhr.send();
