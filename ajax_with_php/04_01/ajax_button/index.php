@@ -52,8 +52,13 @@
 
     <script>
       function favorite() {
+        // Identify the parent element to know which element is favourited.
+        var parent = this.parentElement;
+
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'favorite.php', true);
+        xhr.open('POST', '../favorite.php', true);
+        // To ensure that this is sent as a post request: 
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.onreadystatechange = function () {
           if(xhr.readyState == 4 && xhr.status == 200) {
@@ -61,7 +66,8 @@
             console.log('Result: ' + result);
           }
         };
-        xhr.send();
+        // pass in the id of the element
+        xhr.send("id=" + parent.id);
       }
 
       var buttons = document.getElementsByClassName("favorite-button");
