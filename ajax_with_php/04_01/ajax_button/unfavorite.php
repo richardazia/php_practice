@@ -4,10 +4,15 @@
 
   session_start();
 
-  // To clear the favourites, without doing so in browser:
-  // $_SESSION['favorites'] = [];
-
   if(!isset($_SESSION['favorites'])) { $_SESSION['favorites'] = []; }
+
+  // Function to remove an element from an array
+  $function array_remove($element, $array) {
+    $index = array_search($element, $array);
+    array_splice($array, $index, 1); // 1 to remove just one item. 
+    return array;
+  }
+
 
   function is_ajax_request() {
     return isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
@@ -22,8 +27,8 @@
   if(preg_match("/blog-post-(\d+)/", $raw_id, $matches)) {
     $id = $matches[1];
   // store in $_SESSION['favorites']
-    if(!in_array($id, $_SESSION['favorites'])) {
-      $_SESSION['favorites'] [] = $id;
+    if(in_array($id, $_SESSION['favorites'])) {
+      $_SESSION['favorites'] = array_remove($id, $_SESSION['favorites']);
     }
 
     echo 'true';
