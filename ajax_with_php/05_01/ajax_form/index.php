@@ -33,6 +33,28 @@
 
       var result_div = document.getElementById("result");
       var volume = document.getElementById("volume");
+      var button = document.getElementById("html-submit");
+      var orig_button_value = button.value;
+
+      function showSpinner() {
+        var spinner = document.getElementById("spinner");
+        spinner.style.display = 'block';
+      }
+
+      function hideSpinner() {
+        var spinner = document.getElementById("spinner");
+        spinner.style.display = 'none';
+      }
+
+      function disableSubmitButton() {
+        button.disabled = true;
+        button.value = 'Loading...';
+      }
+
+      function enableSubmitButton() {
+        button.disabled = false;
+        button.value = orig_button_value;
+      }
 
       function postResult(value) {
         volume.innerHTML = value;
@@ -48,7 +70,7 @@
         var inputs = form.getElementsByTagName('input');
         var array = [];
         for(i=0; i < inputs.length; i++) {
-          var inputNameValue = inputs[i].name + '=' inputs[i].value;
+          var inputNameValue = inputs[i].name + '=' + inputs[i].value;
           array.push(inputNameValue);
         }
         return array.join('&');
