@@ -21,6 +21,7 @@
 
   if(preg_match("/blog-post-(\d+)/", $raw_id, $matches)) {
     $id = $matches[1];
+
   // store in $_SESSION['favorites']
     if(!in_array($id, $_SESSION['favorites'])) {
       $_SESSION['favorites'] [] = $id;
@@ -30,7 +31,6 @@
   } else {
     echo 'false';
   }
-
 
 
 ?>
