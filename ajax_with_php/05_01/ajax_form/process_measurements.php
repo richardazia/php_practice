@@ -1,3 +1,5 @@
+
+
 <?php
   // You can simulate a slow server with sleep
   // sleep(2);
@@ -11,12 +13,29 @@
   $width = isset($_POST['width']) ? (int) $_POST['width'] : '';
   $height = isset($_POST['height']) ? (int) $_POST['height'] : '';
 
+  $errors = [];
+  if($length == '') { $errors[] = 'length'; }
+  if($width == '') {$errors[] = 'width'; }
+  if($height == '') {$errors[] = 'height'; }
+
+
+  if(!empty($errors)) {
+    if(is_ajax_request()) {
+      $result_array = array('errors' => $errors);
+      echo json_encode($result_array);
+    } else {
+      echo "<p>There was an error on: " . implode(', ', $errors) . "</p>";
+      echo "<p><a href=\"index.php\">Back</a></p>";
+    }
+    exit;
+  }
+
   $volume = $length * $width * $height;
 
   if(is_ajax_request()) {
     echo $volume;
   } else {
-    exit;
+    echo "<p>The total volume is " . $volume . "</p>";
   }
 
 ?>
