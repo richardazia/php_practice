@@ -21,7 +21,6 @@
         Height: <input type="text" name="height" /><br />
         <br />
         <input id="html-submit" type="submit" value="Submit" />
-        <input id="ajax-submit" type="button" value="Ajax Submit" />
       </form>
     </div>
 
@@ -100,8 +99,11 @@
         xhr.send(form_data);
       }
 
-      var button = document.getElementById("ajax-submit");
-      button.addEventListener("click", calculateMeasurements);
+      // var button = document.getElementById("ajax-submit");
+      button.addEventListener("click", function(e) {
+        e.preventDefault();
+        calculateMeasurements();
+      });
 
     </script>
 
