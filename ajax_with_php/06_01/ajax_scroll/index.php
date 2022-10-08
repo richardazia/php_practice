@@ -82,6 +82,7 @@
 
             hideSpinner();
             // append results to end of blog posts
+            appendToDiv(container, result);
             showLoadMore();
 
           }
