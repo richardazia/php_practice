@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
   // You can simulate a slow server with sleep
   // sleep(2);
 
@@ -6,7 +6,7 @@
 
   if(!isset($_SESSION['favorites'])) { $_SESSION['favorites'] = []; }
 
-  // Function to remove an element from an array
+  // // Function to remove an element from an array
   $function array_remove($element, $array) {
     $index = array_search($element, $array);
     array_splice($array, $index, 1); // 1 to remove just one item. 
@@ -38,4 +38,4 @@
 
 
 
-?>
+?> -->
