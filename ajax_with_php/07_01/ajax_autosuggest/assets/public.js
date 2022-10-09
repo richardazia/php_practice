@@ -12,6 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
   function getSuggestions() {
     var q = search.value;
 
+    if(q.length < 3) {
+      suggestions.style.display = 'none';
+      console.log(q.length)
+      return;
+    } else {
+      console.log("There are " + q.length + " characters");
+    }
+
+    console.log('getSuggestions')
+
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'autosuggest.php?q=' + q, true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
@@ -19,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if(xhr.readyState == 4 && xhr.status == 200) {
         var result = xhr.responseText;
         console.log('Result: ' + result);
-
+        result = '{}';
         var json = JSON.parse(result);
         showSuggestions(json);
       }
@@ -27,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     xhr.send();
   }
 
-  // search.addEventListener("", getSuggestions, false);
+  // Input fires for every key stroke
+  search.addEventListener("input", getSuggestions, false);
 
 });
