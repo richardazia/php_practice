@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if(xhr.readyState == 4 && xhr.status == 200) {
         var result = xhr.responseText;
         console.log('Result: ' + result);
-        result = '{}';
         var json = JSON.parse(result);
         showSuggestions(json);
       }
