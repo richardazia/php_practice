@@ -25,10 +25,6 @@
           </form>
 
           <ul id="suggestions">
-            <li><a href="#">The quick duck</a></li>
-            <li><a href="#">The slick duck</a></li>
-            <li><a href="#">The gaunt goose</a></li>
-            <li><a href="#">The blatant badger</a></li>
           </ul>
 
         </div>

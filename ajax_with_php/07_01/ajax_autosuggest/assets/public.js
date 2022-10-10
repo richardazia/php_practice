@@ -5,7 +5,24 @@ document.addEventListener('DOMContentLoaded', function() {
   var form = document.getElementById("search-form");
   var search = document.getElementById("search");
 
+  function suggestionsToList(items) {
+    // <li><a href="search.php?q=alpha">Alpha</a></li>
+    var output = '';
+
+    for(i=0; i < items.length; i++) {
+      output += '<li>';
+      output += '<a href="search.php?q=' + items[i] + '">';
+      output += items[i];
+      output += '</a>';
+      output += '</li>';
+    }
+
+    return output;
+  }
+
   function showSuggestions(json) {
+    var li_list = suggestionsToList(json);
+    suggestions.innerHTML = li_list;
     suggestions.style.display = 'block';
   }
 
@@ -14,13 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if(q.length < 3) {
       suggestions.style.display = 'none';
-      console.log(q.length)
       return;
-    } else {
-      console.log("There are " + q.length + " characters");
     }
-
-    console.log('getSuggestions')
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'autosuggest.php?q=' + q, true);
@@ -38,6 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Input fires for every key stroke
-  search.addEventListener("input", getSuggestions, false);
+  search.addEventListener("input", getSuggestions);
 
 });

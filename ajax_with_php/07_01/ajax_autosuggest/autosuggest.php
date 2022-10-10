@@ -40,6 +40,7 @@
   // find and return search suggestions as JSON
 
   $choices = file('https://raw.githubusercontent.com/dwyl/english-words/60eb05a1285cae4ff306f0d9dcea407490cf2a99/words_alpha.txt', FILE_IGNORE_NEW_LINES);
+  
   $suggestions = search($query, $choices);
   sort($suggestions);
   $max_suggestions = 5;
