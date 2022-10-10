@@ -11,11 +11,11 @@
     exit;
   }
 
-  function str_starts_with($choice, $query) {
+  function starts_with($choice, $query) {
     return strpos($choice, $query) === 0;
   }
 
-  function str_contains($choice, $query) {
+  function contains($choice, $query) {
     return strpos($choice, $query) !== false;
   }
 
@@ -27,7 +27,7 @@
 
     foreach($choices as $choice) {
       $d_choice = strtolower($choice);
-      if(str_starts_with($d_choice, $d_query)) {
+      if(starts_with($d_choice, $d_query)) {
         $matches[] = $choice;
       }
     }
@@ -39,8 +39,7 @@
 
   // find and return search suggestions as JSON
 
-  $choices = file('https://github.com/dwyl/english-words/blob/60eb05a1285cae4ff306f0d9dcea407490cf2a99/words_alpha.txt');
-  
+  $choices = file('https://raw.githubusercontent.com/dwyl/english-words/60eb05a1285cae4ff306f0d9dcea407490cf2a99/words_alpha.txt', FILE_IGNORE_NEW_LINES);
   $suggestions = search($query, $choices);
 
   echo json_encode($suggestions);
