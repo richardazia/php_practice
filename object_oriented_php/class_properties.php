@@ -17,6 +17,10 @@ class Individual {
     function lunch_time() {
         return 'Enjoy your lunch';
     }
+
+    function hat_shoe() {
+        return $this->hat_type . " " . $this->shoe_size;
+    }
     
 }
 
@@ -29,9 +33,13 @@ $individual2 = new Individual;
 $individual2->hat_type = 'cap';
 $individual2->shoe_size = '28';
 
+echo "<h2>The instance example</h2>";
+echo $individual1->hat_shoe() . "<br />";
+echo $individual2->hat_shoe() . "<br />";
+echo "<hr>";
 echo $individual1->hat_type . " " . $individual1->continent . "<br />";
-echo $individual2->hat_type . " " . $individual2->continent . "<br />";
-
+echo $individual2->hat_type . " " . $individual1->continent . "<br />";
+echo "<h2>The Method example</h2>";
 echo $individual1->good_morning() . "<br>";
 echo $individual2->good_morning() . "<br>";
 echo "<hr>";
