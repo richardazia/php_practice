@@ -9,7 +9,7 @@ class Bicycle {
     var $lbs = 2.20462;
 
     function name() {
-        return "The bike's name is";
+        return "The bike is a " . $this->brand . " with the model name: " . $this->model . "from " . $this->year . ".";
     }
 
     function weight_lbs() {
@@ -54,6 +54,7 @@ echo $equilibrium->year . "<br />";
 echo $equilibrium->description . "<br />";
 echo $equilibrium->weight_kg . "<br />";
 echo $equilibrium->weight_lbs() . "<br />";
+echo $equilibrium->name() . "<br />";
 echo "</pre>";
 
 echo "<hr>";
@@ -65,6 +66,7 @@ echo $aline->year . "<br />";
 echo $aline->description . "<br />";
 echo $aline->weight_kg . "<br />";
 echo $aline->weight_lbs() . "<br />";
+echo $aline->name() . "<br />";
 echo "</pre>";
 
 echo "<hr>";
@@ -76,5 +78,6 @@ echo $pline->year . "<br />";
 echo $pline->description . "<br />";
 echo $pline->weight_kg . "<br />";
 echo $pline->weight_lbs() . "<br />";
+echo $pline->name() . "<br />";
 echo "</pre>";
 ?>
