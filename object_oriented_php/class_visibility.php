@@ -7,7 +7,7 @@ class Individual {
     public $continent = 'none';
 
     protected $uid;
-    private $bank_balance_chf = 12852;
+    private $tuition = 12852;
 
     public function good_morning() {
         return 'Good morning, coffee?';
@@ -31,6 +31,10 @@ class Individual {
 
     private function hello_private_sphere_friends() {
       return 'Hello, select few';
+    }
+
+    public function tuition_fmt() {
+      return 'CHF: ' . $this->tuition;
     }
 
 }
@@ -106,5 +110,10 @@ if(method_exists('Individual', 'go_indoors')) {
 } else {
     echo "!!! Property 'go_indoors' does not exist in Individual class. !!! <br />";
 }
+echo '<hr>';
+echo '<h2>Overloading:</h2> ';
+$individual1->tuition = 10000;
+echo $individual1->tuition . '<br />';
+echo $individual1->tuition_fmt() . '<br />';
 
 ?>
