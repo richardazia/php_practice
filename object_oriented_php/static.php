@@ -55,5 +55,22 @@ SeasonalDiver::add_student();
 echo Diver::count() . "<br />";
 echo SeasonalDiver::count() . "<br />";
 
+echo "<h2>Constants</h2>";
+
+class Clock {
+
+  public const DAY_IN_SECONDS = 60 * 60 * 24;
+
+  public function tomorrow() {
+    // we need to have self:: because it behaves like this. in javascript. It tells the code where to find the variables
+    return time() + self::DAY_IN_SECONDS;
+  }
+
+}
+
+echo Clock::DAY_IN_SECONDS . " seconds in a 24 hour day. <br />";
+
+$clock = new Clock;
+echo $clock->tomorrow() . "<br />";
 
  ?>
