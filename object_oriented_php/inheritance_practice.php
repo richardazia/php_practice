@@ -23,6 +23,18 @@ class BikeRide extends Blog_post {
   }
 }
 
+class Hike extends blog_post {
+  var $start_location;
+  var $end_location;
+  var $step_count;
+  var $distance;
+  var $duration;
+
+  function hike_summary() {
+    return "The walk started in " . $this->start_location . " and finished in " . $this->end_location . ". It took " . $this->duration . "minutes, and " . $this->step_count . " many steps";
+  }
+}
+
 $a_post = new Blog_Post;
 $a_post->title = "The blog post";
 $a_post->date_published = "2022-10-13";
@@ -40,7 +52,20 @@ $bike_ride->start_location = "Nyon";
 $bike_ride->end_location = "Geneva";
 $bike_ride->distance = 24;
 
+$Hike = new Hike;
+$Hike->title = "The Hike Post";
+$Hike->date_published = "2022-10-16";
+$Hike->content = "The quick brown fox jumped over the lazy dog last night. The dog had just finished herding sheep. ";
+$Hike->creation_date = "2022-10-16";
+$Hike->author = "Richard A.";
+$Hike->start_location = "Nyon";
+$Hike->end_location = "Trelex";
+$Hike->step_count = 14263;
+$Hike->distance = 10;
+$Hike->duration_minutes = 94;
+
 echo $a_post->published() . '<br />';
 echo $bike_ride->ride_summary() . '<br />';
+echo $Hike->hike_summary() . '<br />';
 
  ?>
