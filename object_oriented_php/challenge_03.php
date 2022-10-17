@@ -37,6 +37,11 @@ class Bicycle {
     $weight_lbs = floatval($this->weight_kg) * 2.205;
     return $weight_lbs . ' lbs';
   }
+
+  public_function weight_lbs_to_kg {
+    $weight_kgs_from_lbs = floatval($this->weight_lbs) * 0.453592;
+    return $weight_lbs_to_kg . 'kgs';
+  }
 }
 
 class Tricycle extends Bicycle {
