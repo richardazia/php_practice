@@ -2,21 +2,27 @@
 
 class Bicycle {
 
-  public $brand;
-  public $model;
-  public $year;
-  public $description = 'road bike';
-  private $weight_kg = 12.0;
-  public $number_of_wheels = 2;
+  public static $brand;
+  public static $model;
+  public static $year;
+  public static $description = 'road bike';
+  // Make wheels a static property
+  public static $number_of_wheels = 2;
+  // Define a constant for storing an array of categories
+  // road, electric, cargo, gravel, bmx, mountain bike, hybrid, city...
+  public static $category = ['road', 'gravel', 'track'];
+  public static $weight_kg = 12.0;
+  // ToDo: Add static property called $instance_count
+  private static $instance_count = 0;
   protected $wheels = '25-622';
   protected $outer_diameter_mm = 700;
   protected $tire_width_mm = 23;
 
-  public function quick_about() {
-    return "This is a " . $this->description . " made by " . $this->brand . " and it weighs " . $this->weight_kg . "kgs." ;
+  public static function quick_about() {
+    return "This is a " . self::$description . " made by " . self::$brand . " and it weighs " . self::$weight_kg . "kgs." ;
   }
-
-  public function wheel_details() {
+  // wheel details static method
+  public static function wheel_details() {
     $wheel_information = $this->wheels == 1 ? "1 wheel" : "{$this->wheels} wheels";
     return "It has " . $wheel_information . ".";
   }
@@ -44,40 +50,73 @@ class Bicycle {
     $weight_kgs_from_lbs = floatval($this->weight_lbs) * 0.453592;
     return $weight_lbs_to_kg . 'kgs';
   }
+
+  public static function count() {
+    return self::$instance_count;
+  }
+  // Add one to instance Count
+  // Set visibility modifiers on $instance_count and create()
+  public static function add_instance() {
+    self::$instance_count++;
+  }
+  public static function remove_instance() {
+    self::$instance_count--;
+  }
+
+  // ToDo: Write a static method called create()
+  public static function create() {
+
+  }
 }
 
 class Tricycle extends Bicycle {
-  public $number_of_wheels = 3;
+  // Make wheels a static property
+  public static $number_of_wheels = 3;
 }
 
 class Unicycle extends Bicycle {
-  public $number_of_wheels = 1;
+  // Make wheels a static property
+  public static $number_of_wheels = 1;
 }
 
-// Part one
-// ToDo: Add static property called $instance_count
+$equilibrium = new Bicycle;
+$equilibrium::$brand = 'Genesis';
+$equilibrium::$model = 'Equilibrium';
+$equilibrium::$year = 'forgotten';
 
-// ToDo: Write a static method called create()
-// Add one to instance Count
+$globber = new Tricycle;
+$globber::$brand = 'globber';
+$globber::$model = 'Trike explorer 4 in 1';
+$globber::$weight_kg = 8.80;
+
+// Part one
 // Create and return new instance of the class
 
 // Part Two
-// Set visibility modifiers on $instance_count and create()
-
-// Define a constant for storing an array of categories
-
-// road, electric, cargo, gravel, bmx, mountain bike, hybrid, city...
 
 // Add a $category property for instances to store their category
 
 // Part three
-// Make wheels a static property
-
-// wheel details static method
 
 // Create a method in unicycle which extends a method in Bicycle.
 
 // Unicycle method to override method in bicycle unless condition is not met.
+echo "<h1>Challenge 04</h2>";
+echo Bicycle::count() . " instances for now.<br />";
+echo Bicycle::add_instance();
+echo Bicycle::add_instance();
+echo Bicycle::add_instance();
+echo Bicycle::add_instance();
+echo Bicycle::add_instance();
+echo Bicycle::count() . " instances for now.<br />";
+echo Bicycle::remove_instance();
+echo Bicycle::remove_instance();
+echo Bicycle::remove_instance();
+echo Bicycle::remove_instance();
+echo Bicycle::count() . " instances for now.<br />";
 
+echo "Type of bike: " . Bicycle::$category[1] . "<br />";
+
+echo Bicycle::quick_about();
 
  ?>
