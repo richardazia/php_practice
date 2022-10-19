@@ -8,9 +8,10 @@ class Bicycle {
   public static $description = 'road bike';
   // Make wheels a static property
   public static $number_of_wheels = 2;
+  public $category = ['road', 'gravel', 'track'];
   // Define a constant for storing an array of categories
   // road, electric, cargo, gravel, bmx, mountain bike, hybrid, city...
-  public static $category = ['road', 'gravel', 'track'];
+  // public static $category = ['road', 'gravel', 'track'];
   public static $weight_kg = 12.0;
   // ToDo: Add static property called $instance_count
   private static $instance_count = 0;
@@ -22,8 +23,12 @@ class Bicycle {
     return "This is a " . self::$description . " made by " . self::$brand . " and it weighs " . self::$weight_kg . "kgs." ;
   }
   // wheel details static method
+  // public static function wheel_details() {
+  //   $wheel_information = $this->wheels == 1 ? "1 wheel" : "{$this->wheels} wheels";
+  //   return "It has " . $wheel_information . ".";
+  // }
   public static function wheel_details() {
-    $wheel_information = $this->wheels == 1 ? "1 wheel" : "{$this->wheels} wheels";
+    $wheel_information = static::$wheels == 1 ? "1 wheel" : "{static::$wheels} wheels";
     return "It has " . $wheel_information . ".";
   }
 
@@ -62,11 +67,21 @@ class Bicycle {
   public static function remove_instance() {
     self::$instance_count--;
   }
+  // Part three
 
+  // Create a method in unicycle which extends a method in Bicycle.
+  // Course solution
   // ToDo: Write a static method called create()
   public static function create() {
-
+    $class_name = get_called_class(); // we use called for late static binding
+    $obj = new $class_name;
+    // $obj = new static // Both do the same thing
+    // $obj = new static // Both do the same thing
+    self::$instance_count++; // Shared variable between classes and subclasses
+    return $obj;
   }
+
+  public const CATEGORIES = ['Road', 'Mountain', 'Folding', 'Half', 'Tandem', 'Gravel', 'City'];
 }
 
 class Tricycle extends Bicycle {
@@ -96,27 +111,42 @@ $globber::$weight_kg = 8.80;
 
 // Add a $category property for instances to store their category
 
-// Part three
-
-// Create a method in unicycle which extends a method in Bicycle.
-
 // Unicycle method to override method in bicycle unless condition is not met.
 echo "<h1>Challenge 04</h2>";
 echo Bicycle::count() . " instances for now.<br />";
+echo Tricycle::count() . " instances for now.<br />";
+echo Bicycle::add_instance();
+echo Tricycle::add_instance();
+echo Tricycle::add_instance();
+echo Tricycle::add_instance();
 echo Bicycle::add_instance();
 echo Bicycle::add_instance();
 echo Bicycle::add_instance();
 echo Bicycle::add_instance();
 echo Bicycle::add_instance();
+echo "<hr>";
 echo Bicycle::count() . " instances for now.<br />";
+echo Tricycle::count() . " instances for now.<br />";
 echo Bicycle::remove_instance();
 echo Bicycle::remove_instance();
 echo Bicycle::remove_instance();
 echo Bicycle::remove_instance();
+echo "<hr>";
 echo Bicycle::count() . " instances for now.<br />";
 
-echo "Type of bike: " . Bicycle::$category[1] . "<br />";
+// For when category is public static
+// echo "Type of bike: " . Bicycle::$category[1] . "<br />";
+
+echo "Categories: " . implode(', ', Bicycle::CATEGORIES) . "<br />";
+$globber->category = Bicycle::CATEGORIES[0];
+echo 'Category: ' . $globber->category . '<br />';
 
 echo Bicycle::quick_about();
+
+$bike = Bicycle::create();
+$tri = Tricycle::create();
+echo "<hr>";
+echo Bicycle::count() . " instances for now.<br />";
+echo Tricycle::count() . " instances for now.<br />";
 
  ?>
