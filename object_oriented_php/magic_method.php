@@ -9,10 +9,10 @@ class Harmonica {
   public $reeds = 20;
   public $reed_plates = 2;
 
-  public function __construct($reeds, $holes) {
+  public function __construct($args=[]) {
     self::$instance_count++;
-    $this->reeds = $reeds;
-    $this->holes = $holes;
+    $this->reeds = $args['reeds'] ?? 20;
+    $this->holes = $args['holes'] ?? $this->holes;
   }
 }
 
@@ -26,16 +26,22 @@ class Cx12 extends Harmonica {
   var $holes = 12;
 }
 
-$diatonic = new Harmonica(20, 10);
+$diatonic = new Harmonica(['reeds' => 20, 'holes' => 10]);
 echo "<h2>Diatonic Harmonica</h2>";
 echo '-- Reeds: ' . $diatonic->reeds . '<br />';
 echo '-- Holes: ' . $diatonic->holes . '<br />';
 echo '<br />';
 
-$cx12 = new Harmonica(42, 12);
+$cx12 = new Harmonica(['reeds' => 48, 'holes' => 12]);
 echo "<h2>CX12 Harmonica</h2>";
 echo '-- Reeds: ' . $cx12->reeds . '<br />';
 echo '-- Holes: ' . $cx12->holes . '<br />';
+echo '<br />';
+
+$littleLady = new Harmonica(['reeds' => 8, 'holes' => 4]);
+echo "<h2>LittleLady Harmonica</h2>";
+echo '-- Reeds: ' . $littleLady->reeds . '<br />';
+echo '-- Holes: ' . $littleLady->holes . '<br />';
 echo '<br />';
 
 ?>
