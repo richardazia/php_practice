@@ -6,6 +6,17 @@ foreach ($villages as $key => $val) {
     echo "<p>villages[" . $key . "] = " . $val;
 }
 
+$petit_train_rouge = array("St-Cergue", "La Chèvrerie-Monteret", "Arzier", "Bassins", "Le Muids", "La Joy-Clinique", "Sus-Châtel", "Genolier", "Givrins", "Trelex", "Asse", "Nyon");
+echo "<pre>";
+print_r($petit_train_rouge);
+echo "</pre>";
+sort($petit_train_rouge);
+foreach ($petit_train_rouge as $key => $val) {
+  $key = $key++;
+  echo "<li>Train stop: " . $key . " -> " .$val;
+}
+
+
 $birds = array("Chicken", "Duck", "Goose", "Heron", "Flamingo", "Eagle", "woodpecker", "chicken", "dodo", "emu", "austrich");
 sort($birds, SORT_STRING | SORT_FLAG_CASE); // This sorts it by alphabetical and case
 // $rbirds = rsort($birds);
