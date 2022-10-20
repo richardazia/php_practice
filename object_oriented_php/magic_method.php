@@ -14,6 +14,11 @@ class Harmonica {
     $this->reeds = $args['reeds'] ?? 20;
     $this->holes = $args['holes'] ?? $this->holes;
   }
+
+  public function __destruct() {
+    echo "Cheerio old chap!!";
+    echo "<br />";
+  }
 }
 
 class Diatonic extends Harmonica {
