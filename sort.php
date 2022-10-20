@@ -10,6 +10,15 @@ $birds = array("Chicken", "Duck", "Goose", "Heron", "Flamingo", "Eagle", "woodpe
 sort($birds, SORT_STRING | SORT_FLAG_CASE); // This sorts it by alphabetical and case
 // $rbirds = rsort($birds);
 
+$words = array("walking", "a", "the", "it", "then", "those", "these", "geraniums", "mud", "flame", "ox", "kudu");
+echo "<pre>";
+print_r($words);
+echo "</pre>";
+echo "<hr>";
+sort($words, SORT_STRING | SORT_FLAG_CASE);
+echo "<pre>";
+print_r($words);
+echo "</pre>";
 $some_numbers = array(4,3,2,5,6,4,3,2,1,8,5,);
 sort($some_numbers, SORT_NUMERIC);
 echo "<h2>Birds</h2>";
