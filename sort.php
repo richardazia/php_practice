@@ -64,11 +64,11 @@ foreach ($number_range as $number) {
 
 var_dump(count($number_range));
 
-$number_range = range(1,45);
-
-shuffle($number_range);
-foreach ($number_range as $number) {
-    echo $number;
-}
+// $number_range = range(1,45);
+//
+// shuffle($number_range);
+// foreach ($number_range as $number) {
+//     echo $number;
+// }
 
 var_dump(count($number_range));

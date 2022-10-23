@@ -13,10 +13,36 @@ function multiply($a, $b) {
     return (( $a * $b ) > 0 ) ? $a * $b : throw new Exception("The result is a negative number.");
 }
 
+
 try {
     echo multiply(-8, 4);
 } catch( Exception $e ) {
     echo $e->getMessage();
 }
 
-// we don't need to close php code. 
+echo "<hr>";
+
+try {
+    echo multiply(-3, 1);
+} catch( Exception $e ) {
+    echo $e->getMessage();
+}
+
+echo "<hr>";
+
+try {
+    echo multiply(2, 4);
+} catch( Exception $e ) {
+    echo $e->getMessage();
+}
+
+echo "<hr>";
+
+try {
+    echo multiply(3, 3);
+} catch( Exception $e ) {
+    echo $e->getMessage();
+}
+
+echo "<hr>";
+// we don't need to close php code.
