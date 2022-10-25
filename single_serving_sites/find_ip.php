@@ -38,13 +38,32 @@ function forwarded_ip() {
       // $ip_array = explode(', ', $_SERVER[$key]);
       foreach($ip_array as $ip) {
         $ip = trim($ip);
-        return $ip;
+        if(validate_ip($ip)) {
+          return $ip;
+        }
       }
     }
   }
   return 'None';
 }
 
+// https://www.php.net/manual/en/filter.filters.flags.php for more info about the flags.
+
+function validate_ip($ip) {
+  if(filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_IPV6 |FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) == false) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 echo "<p>The Forwarded IP is: " . forwarded_ip();
+
+//Check if validate ip is valid
+if(validate_ip('1.1.1.1,2.2.2.2,193.168.1.1')) {
+  echo '<p>This is a valid IP address';
+} else {
+  echo '<p>This is not a valid IP address';
+}
 
 ?>
