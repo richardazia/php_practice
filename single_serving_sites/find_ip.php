@@ -83,6 +83,31 @@ if(isset($_SERVER['HTTPS'])) {
 echo "<h2>Today</h2>";
 echo '<p>' . date('l, j F, Y g:ia', $_SERVER['REQUEST_TIME']);
 
+echo "<h2>Is It Wednesday yet?</h2>";
+date_default_timezone_set("Europe/Paris");
+echo "<p>For the day name: " . date('l') . "</p>";
+echo "<p>For the three letter version: " . date('D') . "</p>";
+echo "<p>For the week day number: " . date('N') . "</p>";
+
+echo "<pre>";
+print_r(getdate());
+echo "</pre>";
+
+echo "<p>" . getdate()['weekday'];
+echo "<p>" . getdate()['wday'];
+
+echo "<p>" . date("G:i:s");
+echo "<p>" . date("g:i:s");
+
+if(date('D') == 'Wed') {
+  echo "<p>Happy Hump Day, over half of the week over with. :-)";
+} else {
+  $remaining = 3 - date('N');
+  if ($remaining < 0) {$remaining += 7;}
+  echo "<p>Sorry, it's only " . date('D') . ".";
+  echo "Only " . $remaining . " more days to go.";
+}
+
 ?>
 
 <script>
