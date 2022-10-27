@@ -1,6 +1,28 @@
+<title>Playing with Single Page sites</title>
+
+<style type="text/css">
+body {
+  margin: 0;
+  padding: 0;
+  /* background: #DFCC89; */
+}
+
+#main-content {
+  margin:30px;
+  text-align: center;
+  /* color: #3D2399; */
+}
+
+#main-content h1 {
+  font: 40px Arial, Helvetica, sans-serif;
+}
+</style>
+
 <?php
 
 // This code is copied or slightly modified from the Kevin Skoglund Course: Easy PHP projects, single-Serving Sites available on Linkedin Learning.
+echo "<body>";
+echo "<div id='main-content'>";
 echo "<h1>Random server related information</h1>";
 echo "<pre>";
 print_r($_SERVER);
@@ -108,7 +130,39 @@ if(date('D') == 'Wed') {
   echo "Only " . $remaining . " more days to go.";
 }
 
+echo "<h2>Is This Year a Leap Year?</h2>";
+
+function is_leap_year($year){
+  if($year % 4 > 0) {
+    return false;
+  } elseif($year % 100 > 0) {
+    return true;
+  } elseif($year % 400 > 0) {
+    return false;
+  }
+}
+if(isset($_GET["year"])) {
+  $year = intval($_GET["year"]);
+} else {
+  $year = date("Y");
+}
+// echo "$year";
+
+if(is_leap_year($year)) {
+  echo "{$year} is a leap year.";
+} else {
+  echo "{$year} is not a leap year.";
+}
+
+echo "</div>";
+echo "</body>";
 ?>
+
+<form action="" method="get">
+  enter a year to find out if it is a leap year: <br />
+  <input type="text" name="year" value="<?php echo $year; ?>" /><br />
+  <input type="submit" value="Submit" />
+</form>
 
 <script>
 console.log("Test to see if it works");
