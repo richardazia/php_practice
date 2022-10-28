@@ -1,4 +1,4 @@
-<title>Playing with Single Page sites</title>
+<title>Playing with Single Page Sites</title>
 
 <style type="text/css">
 body {
@@ -153,6 +153,19 @@ if(is_leap_year($year)) {
 } else {
   echo "{$year} is not a leap year.";
 }
+
+echo "<h3><b>Random number: " . rand(5,25) . "</b></h3>";
+
+$rainbow = array("Red","Orange","Yellow","Green","Blue","Indigo","Violet");
+$random_rainbow = $rainbow[rand(0,6)];
+?>
+<style>
+h4 {
+  color: $random_rainbow;
+}
+</style>
+<?php
+echo "<h4>" . $random_rainbow . "</h4>";
 
 echo "</div>";
 echo "</body>";
