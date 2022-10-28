@@ -36,5 +36,14 @@ $rainbow_count = count($rainbow);
   <div class="area" id="area5" style="background: <?php echo $rainbow[rand(0, $rainbow_count-1)];?>"></div>
   <div class="area" id="area6" style="background: <?php echo $rainbow[rand(0, $rainbow_count-1)];?>"></div>
   <div class="area" id="area7" style="background: <?php echo $rainbow[rand(0, $rainbow_count-1)];?>"></div>
+
+
+<?php
+// What we see above can be done with a foreach loop
+  $squares = 60;
+  for($i=0; $i < $squares; $i++) {
+    echo "<div class=\"area\" id=\"area2\" style=\"background: {$rainbow[rand(0, $rainbow_count-1)]}\"></div>";
+  }
+  ?>
 </body>
 </html>
