@@ -43,6 +43,8 @@ foreach ($recursive_files as $file) {
   echo '<p>Unix path and Skip Dots ' . $file . '<br>';
 }
 
-
-
+$files_size = new FilesystemIterator('../standard_library');
+foreach ($files_size as $file) {
+  echo '<p>' .  $files_size->getFilename() . ' is ' . $files_size->getSize() . 'bytes.'; 
+}
 ?>
