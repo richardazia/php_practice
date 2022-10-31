@@ -20,10 +20,6 @@ $courses = simplexml_load_file('../standard_library/data/courses.xml', 'SimpleXM
 // $courses = new SimpleXMLIterator($courses);
 $courses = new LimitIterator($courses, 0, 10); // this limits the results to the first ten
 foreach ($courses as $course) {
-  $matches = new RegexIterator($course->author, '/joh?n peck/i');
-  foreach($matches as $match) {
-    echo $courses-> getPosition() + 1 .  $course->title . ' with ' . $match . ' (Duration: ' . $course->duration. ')<br>';
-  }
-  // echo $course->title . '<br>';
+    echo $courses-> getPosition() + 1 . ". " .  $course->title . ' with ' . ' (Duration: ' . $course->duration. ')<br>';
 }
 
