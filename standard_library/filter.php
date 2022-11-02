@@ -109,5 +109,13 @@ foreach ($files as $file) {
   echo $file->getPathname() . '<br>';
 }
 
+echo "<h2>Parent Iterator</h2>";
+echo "<p>Parent iterator only selects parents, useful for menus and more, where menus use sub folders.</p>";
+$dirs = new RecursiveDirectoryIterator('.');
+$dirs = new ParentIterator($dirs);
+$dirs = new RecursiveIteratorIterator($dirs, RecursiveIteratorIterator::SELF_FIRST);
+foreach ($dirs as $dir) {
+  echo $dir->getFilename() . '<br>';
+}
 
 ?>
