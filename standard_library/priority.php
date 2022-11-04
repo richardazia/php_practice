@@ -1,5 +1,15 @@
 <?php
 
+class OrderedPriority extends SplPriorityQueue
+{
+  protected $serial = PHP_INT_MAX;
+
+  public function insert($value, $priority)
+  {
+    parent::insert($value, array($priority, $this->serial--));
+  }
+}
+
 function setPriority($line) {
   $start = strpos($line, 'PHP');
 
@@ -23,7 +33,7 @@ function setPriority($line) {
   }
 }
 
-$log = newSplPriorityQueue();
+$log = OrderedPriority();
 $file = new SplFileObject('tbc');
 while (!$file->eof()) {
   $line = $file->fgets();
