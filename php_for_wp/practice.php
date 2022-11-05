@@ -66,3 +66,34 @@ $results[] = 3 * ((24 / 2) - (3 * 4) + (2 * 6));
 echo "<pre>";
 print_r($results);
 echo "</pre>";
+
+$width = 8.7;
+echo "width =$width \n";
+echo 'or'."\n";
+echo 'Width = $width'." (".$width.")";
+
+echo (12**2+12)*2+1;
+
+$silly = array( 
+  'films' => 'long',
+  'books' => 'interesting',
+  'podcasts' => 'were fun',
+  'radio' => 'good when driving',
+  'youtube' => 'was much better than it is now',
+);
+
+foreach ( $silly as $rate => $opinion )
+  echo "$rate:  $opinion <br>";
+
+$traffic_lights = array(
+  'red' => 'stop',
+  'orange' => 'think about stopping right now',
+  'green' => 'time to drive off',
+);
+
+foreach ( $traffic_lights as $status => $wake )
+  echo "$status: $wake <br>";
+
+
+
+
