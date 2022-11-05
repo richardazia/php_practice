@@ -55,4 +55,11 @@ echo "<pre>";
 print_r($harmonicas);
 echo "</pre>";
 
-echo $harmonicas['Special 20']['comb']; // to get a specific output from within an array. 
+echo $harmonicas['Special 20']['comb']; // to get a specific output from within an array.
+
+$question_1 = 9 + 2 * 5 - 11;
+$question_2 = 18 / (3 * 6 -9) * 3;
+$question_3 = 3 * (24 / 2 - 3 * 4 + 2 * 6);
+echo "The answer to Question 1 is: $question_1<br>";
+echo "The answer to Question 2 is: $question_2<br>";
+echo "The answer to Question 3 is: $question_3<br>";
