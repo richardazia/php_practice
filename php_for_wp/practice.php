@@ -94,6 +94,24 @@ $traffic_lights = array(
 foreach ( $traffic_lights as $status => $wake )
   echo "$status: $wake <br>";
 
+// challenge arrays recopied
 
+$tmnt = array( 
+  'Leo' => array('blue', 'swords', 'leader' ),
+  'Raf' => array('red', 'bikes', 'writer'),
+  'Mickey' => array('green', 'berets', 'charismatic'),
+  'Donatello' => array('purple', 'shaft', 'intellectual'),
+);
+
+echo "<h2>Challenge attempt</h2>";
+var_dump($tmnt);
+
+foreach ( $tmnt as $turtle => $details )
+  $details = implode(", ", $details);
+echo "$turtle: $details<br>";
+
+echo implode (', ', array_map(function ($details) {
+  return ($details[key($details)]);
+}, $tmnt));
 
 
