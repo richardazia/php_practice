@@ -114,4 +114,13 @@ echo implode (', ', array_map(function ($details) {
   return ($details[key($details)]);
 }, $tmnt));
 
+for ($row = 0; $row < 3; $row++) {
+  echo "<p><b>Item 1 $row</b></p>";
+  echo "<ul>";
+  for ($col = 0; $col < 2; $col++) {
+    echo "<li>".$tmnt[$row][$col]."</li>";
+  }
+  echo "</ul>";
+}
 
+?>
