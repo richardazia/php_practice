@@ -129,9 +129,12 @@ for ($row = 0; $row < 3; $row++) {
 
 foreach ($tmnt as $turtle => $details ) {
   echo "<p><b>$turtle:</b> "; 
+  $details_list = '';
   foreach( $details as $detail ) {
-    echo "$detail, ";
+    $details_list .="$detail, ";
   }
+  $details_list = trim( $details_list, ', ');
+  echo $details_list;
   echo '</p>';
 }
 
