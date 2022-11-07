@@ -105,7 +105,7 @@ $tmnt = array(
 
 echo "<h2>Challenge attempt</h2>";
 var_dump($tmnt);
-
+/*
 foreach ( $tmnt as $turtle => $details )
   $details = implode(", ", $details);
 echo "$turtle: $details<br>";
@@ -113,7 +113,8 @@ echo "$turtle: $details<br>";
 echo implode (', ', array_map(function ($details) {
   return ($details[key($details)]);
 }, $tmnt));
-
+ */
+/*
 for ($row = 0; $row < 3; $row++) {
   echo "<p><b>Item 1 $row</b></p>";
   echo "<ul>";
@@ -121,6 +122,17 @@ for ($row = 0; $row < 3; $row++) {
     echo "<li>".$tmnt[$row][$col]."</li>";
   }
   echo "</ul>";
+}
+*/
+
+// I don't understand how to traverse arrays effectively yet. I need to practice this skill. 
+
+foreach ($tmnt as $turtle => $details ) {
+  echo "<p><b>$turtle:</b> "; 
+  foreach( $details as $detail ) {
+    echo "$detail, ";
+  }
+  echo '</p>';
 }
 
 ?>
