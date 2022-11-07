@@ -137,5 +137,21 @@ foreach ($tmnt as $turtle => $details ) {
   echo $details_list;
   echo '</p>';
 }
+/*
+// The loop has five items. 
+
+$lengths = array (12, 8, 7, 14, 16);
+foreach $lengths as $test) {
+  echo $test."\n";
+}
+ */
+
+function is_palindrome ( $string ) {
+  $pal_check = ( $string == strrev( $string ) );
+  return $pal_check;
+}
+
+echo "<h2>Playing with palindromes</h2>";
+var_dump( is_palindrome("deified") );
 
 ?>
