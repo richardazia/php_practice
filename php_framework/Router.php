@@ -9,8 +9,11 @@ class Router {
     $route = preg_replace('/\//', '\\/', $route);
     // convert variables e.g. {controller}
     $route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-z-]+)', $route);
+    // convert variables with custom regex eg {id:\d+}
+    $route = preg_replace('/\{([a-z]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
     // add start and end delimiters and case insensitivity
     $route = '/^' . $route . '$/i';
+    
     
     $this->routes[$route] = $params;
   }
